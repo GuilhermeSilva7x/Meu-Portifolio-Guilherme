@@ -21,7 +21,7 @@ ScrollReveal().reveal('.botao-form', { origin: 'bottom', viewFactor: 0.2 });
 
 document.addEventListener("DOMContentLoaded", function () {
     const elementoBoasVindas = document.getElementById("mensagem-boas-vindas");
-    
+
     if (elementoBoasVindas) {
         const hora = new Date().getHours();
         let saudacao = "";
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function alternarTema() {
     const corpo = document.body;
     const botao = document.getElementById("btn-tema");
-    
+
     corpo.classList.toggle("bg-dark");
     corpo.classList.toggle("text-white");
 
@@ -62,12 +62,12 @@ function enviarWhats(event) {
 
     const nome = document.getElementById('nome').value;
     const mensagem = document.getElementById('mensagem').value;
-    const telefone = '5564999999999'; 
+    const telefone = '5564992517948';
 
     const texto = `Olá, me chamo ${nome}. ${mensagem}`;
     const msgFormatada = encodeURIComponent(texto);
     const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
-    
+
     console.log(url);
     window.open(url, '_blank');
 }
