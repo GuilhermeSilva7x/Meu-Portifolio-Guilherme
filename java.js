@@ -40,12 +40,113 @@ document.addEventListener("DOMContentLoaded", function () {
         elementoAno.innerText = new Date().getFullYear();
     }
 
-    // 3. Efeito 3D Tilt nos Cards (Apenas em telas com mouse / Desktop)
+    // 3. Fundo Tecnológico Dinâmico (Stream de Código & Rede de Dados)
+    iniciarCanvasTech();
+
+    // 4. Efeito 3D Tilt nos Cards (Apenas em telas com mouse / Desktop)
     iniciarEfeitoTiltDesktop();
 
-    // 4. ScrollSpy sincronizado (Desktop + Dock Inferior Mobile)
+    // 5. ScrollSpy sincronizado (Desktop + Dock Inferior Mobile)
     iniciarScrollSpy();
 });
+
+// MOTOR DE STREAM DE CÓDIGO & REDE DE DADOS 3D (CANVAS)
+// Substitui degradês por elementos tecnológicos reais flutuando no fundo
+function iniciarCanvasTech() {
+    const canvas = document.getElementById("canvas-tech-stream");
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    let largura, altura;
+    let particulas = [];
+    const simbolosTech = ["</>", "{ }", "git", "0101", "const", "async", "=>", "API", "npm", "SQL", "JS", "TS", "npm run", "class"];
+
+    function redimensionar() {
+        largura = canvas.width = window.innerWidth;
+        altura = canvas.height = window.innerHeight;
+        criarParticulas();
+    }
+
+    function criarParticulas() {
+        particulas = [];
+        const ehMobile = window.innerWidth < 768;
+        const total = ehMobile ? 22 : 45;
+
+        for (let i = 0; i < total; i++) {
+            const ehTexto = Math.random() > 0.45;
+            particulas.push({
+                x: Math.random() * largura,
+                y: Math.random() * altura,
+                vx: (Math.random() - 0.5) * 0.4,
+                vy: -(Math.random() * 0.5 + 0.2), // flutua suavemente para cima
+                tipo: ehTexto ? "texto" : "ponto",
+                texto: simbolosTech[Math.floor(Math.random() * simbolosTech.length)],
+                tamanho: ehTexto ? (ehMobile ? 11 : 13) : Math.random() * 2 + 1,
+                alpha: Math.random() * 0.45 + 0.15,
+                alphaVelocidade: (Math.random() - 0.5) * 0.005
+            });
+        }
+    }
+
+    function animar() {
+        ctx.clearRect(0, 0, largura, altura);
+
+        // 1. Linhas de conexão sutis entre partículas próximas
+        const distanciaMaxima = window.innerWidth < 768 ? 85 : 120;
+        for (let i = 0; i < particulas.length; i++) {
+            for (let j = i + 1; j < particulas.length; j++) {
+                const dx = particulas[i].x - particulas[j].x;
+                const dy = particulas[i].y - particulas[j].y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+
+                if (dist < distanciaMaxima) {
+                    const opacidade = (1 - dist / distanciaMaxima) * 0.12;
+                    ctx.strokeStyle = `rgba(56, 189, 248, ${opacidade})`;
+                    ctx.lineWidth = 0.8;
+                    ctx.beginPath();
+                    ctx.moveTo(particulas[i].x, particulas[i].y);
+                    ctx.lineTo(particulas[j].x, particulas[j].y);
+                    ctx.stroke();
+                }
+            }
+        }
+
+        // 2. Desenha cada símbolo de tecnologia ou nó da rede
+        particulas.forEach(p => {
+            p.x += p.vx;
+            p.y += p.vy;
+            p.alpha += p.alphaVelocidade;
+
+            if (p.alpha <= 0.1 || p.alpha >= 0.6) {
+                p.alphaVelocidade *= -1;
+            }
+
+            if (p.y < -25) {
+                p.y = altura + 25;
+                p.x = Math.random() * largura;
+            }
+            if (p.x < -25) p.x = largura + 25;
+            if (p.x > largura + 25) p.x = -25;
+
+            if (p.tipo === "texto") {
+                ctx.font = `600 ${p.tamanho}px 'Fira Code', monospace`;
+                ctx.fillStyle = `rgba(56, 189, 248, ${p.alpha})`;
+                ctx.fillText(p.texto, p.x, p.y);
+            } else {
+                ctx.fillStyle = `rgba(125, 211, 252, ${p.alpha})`;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.tamanho, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        });
+
+        requestAnimationFrame(animar);
+    }
+
+    window.addEventListener("resize", redimensionar);
+    redimensionar();
+    animar();
+}
 
 // MOTOR DE EFEITO 3D TILT (DESKTOP)
 function iniciarEfeitoTiltDesktop() {
