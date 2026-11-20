@@ -3,159 +3,451 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio do Guilherme</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Guilherme Silva | Desenvolvedor Web & Engenharia de Software</title>
+    <meta name="description" content="Portfólio profissional de Guilherme Silva - Estudante de Engenharia de Software e Desenvolvedor Frontend. Projetos modernos, interativos e responsivos.">
+
+    <!-- Google Fonts: Plus Jakarta Sans & Fira Code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Ícones do Bootstrap -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    <link rel="stylesheet" href="styles.css?v=99">
+    <link rel="stylesheet" href="styles.css?v=110">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 </head>
 
 <body id="corpo-pagina">
 
-    <div class="particulas"></div>
+    <!-- FUNDO AMBIENTE CIBERNÉTICO COM NEON E ORBS 3D -->
+    <div class="fundo-ambiente" aria-hidden="true">
+        <div class="luz-orb orb-1"></div>
+        <div class="luz-orb orb-2"></div>
+        <div class="luz-orb orb-3"></div>
+        <div class="grid-perspectiva"></div>
+    </div>
 
-    <!-- MENU -->
-    <nav class="navegacao d-flex justify-content-center align-items-center position-fixed w-100 top-0">
-        <ul class="menu list-unstyled m-0 d-flex gap-4">
-            <li><a href="#inicio" class="menu-link">Início</a></li>
-            <li><a href="#sobre" class="menu-link">Sobre</a></li>
-            <li><a href="#habilidades" class="menu-link">Habilidades</a></li>
-            <li><a href="#projetos" class="menu-link">Projetos</a></li>
-            <li><a href="#contato" class="menu-link">Contato</a></li>
-        </ul>
+    <!-- MENU SUPERIOR DESKTOP FLUTUANTE -->
+    <header class="header-flutuante">
+        <nav class="navegacao-dock d-flex justify-content-between align-items-center">
+            <a href="#inicio" class="logo-marca">
+                <span class="logo-code">&lt;</span>GS<span class="logo-code">/&gt;</span>
+            </a>
 
-        <!-- Botão no canto direito -->
-        <button id="btn-tema" class="btn btn-outline-light btn-sm position-absolute end-0 me-4 d-none d-md-block"
-            onclick="alternarTema()">
-            🌙 Modo Noturno
-        </button>
-    </nav>
+            <!-- Links Desktop -->
+            <ul class="menu-links list-unstyled m-0 d-none d-md-flex align-items-center gap-2">
+                <li><a href="#inicio" class="dock-link active"><i class="bi bi-house-door me-1"></i> Início</a></li>
+                <li><a href="#sobre" class="dock-link"><i class="bi bi-person me-1"></i> Sobre</a></li>
+                <li><a href="#habilidades" class="dock-link"><i class="bi bi-cpu me-1"></i> Habilidades</a></li>
+                <li><a href="#projetos" class="dock-link"><i class="bi bi-code-slash me-1"></i> Projetos</a></li>
+                <li><a href="#contato" class="dock-link"><i class="bi bi-chat-dots me-1"></i> Contato</a></li>
+            </ul>
 
-    <!-- CABEÇALHO -->
-    <main id="inicio" class="cabecalho text-center py-5">
-        <!-- boas-vindas dinâmica -->
-        <div id="mensagem-boas-vindas" class="alert alert-info d-inline-block mb-3 fw-bold"></div>
-        <br>
+            <div class="d-flex align-items-center gap-2">
+                <button id="btn-tema" class="btn-tema-glass" onclick="alternarTema()" aria-label="Alternar Modo de Cor">
+                    <span id="icone-tema">🌙</span>
+                    <span class="d-none d-lg-inline ms-1" id="texto-tema">Modo Noturno</span>
+                </button>
+            </div>
+        </nav>
+    </header>
 
-        <!-- Foto de perfil com classe rounded-circle do Bootstrap -->
-        <img src="./img/eu.png" alt="Foto de Guilherme Silva" class="foto-perfil rounded-circle mb-3">
+    <!-- CABEÇALHO / HERO ULTRA MODERNO -->
+    <main id="inicio" class="hero-secao text-center">
+        <div class="container hero-container">
+            
+            <!-- CHIP DE STATUS (MODERNO E PROFISSIONAL - SEM 'BOM DIA') -->
+            <div class="d-flex justify-content-center mb-4">
+                <div class="chip-status-pro">
+                    <span class="ponto-pulsante"></span>
+                    <span class="texto-status">Disponível para Projetos & Estágio</span>
+                </div>
+            </div>
 
-        <h1>Guilherme Silva</h1>
-        <p class="cabecalho-sub-titulo lead">
-            Estudante de Engenharia de Software • Desenvolvedor Web em evolução
-        </p>
+            <!-- COMPOSIÇÃO DO AVATAR 3D COM GLOW HALO & CHIPS RESPONSIVOS -->
+            <div class="avatar-arena mb-4">
+                <div class="avatar-halo-glow"></div>
+                <div class="avatar-borda-gradiente">
+                    <img src="./img/eu.png" alt="Foto de perfil de Guilherme Silva" class="avatar-foto">
+                </div>
+
+                <!-- Chips 3D posicionados de forma 100% responsiva -->
+                <div class="chip-flutuante chip-dev" title="Frontend Moderno">
+                    <span class="chip-icone">💻</span>
+                    <span class="chip-txt">Dev Web</span>
+                </div>
+
+                <div class="chip-flutuante chip-eng" title="Engenharia de Software">
+                    <span class="chip-icone">🚀</span>
+                    <span class="chip-txt">Software Eng</span>
+                </div>
+
+                <div class="chip-flutuante chip-code" title="Código Limpo">
+                    <span class="chip-icone">⚡</span>
+                    <span class="chip-txt">Clean Code</span>
+                </div>
+            </div>
+
+            <!-- TÍTULO PRINCIPAL FLUIDO -->
+            <h1 class="hero-titulo">
+                Olá, eu sou <span class="texto-gradiente-neon">Guilherme Silva</span>
+            </h1>
+
+            <p class="hero-subtitulo lead col-lg-8 mx-auto mb-4">
+                Estudante de <strong>Engenharia de Software</strong> <span class="divisor-tag">•</span> Desenvolvedor Web focado em interfaces interativas, código limpo e arquitetura moderna.
+            </p>
+
+            <!-- BOTÕES DE AÇÃO HERO -->
+            <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap hero-botoes mb-4">
+                <a href="#projetos" class="btn btn-neon-principal">
+                    <i class="bi bi-rocket-takeoff-fill me-2"></i> Ver Projetos
+                </a>
+                <a href="#contato" class="btn btn-neon-secundario">
+                    <i class="bi bi-chat-text-fill me-2"></i> Falar Comigo
+                </a>
+            </div>
+
+            <!-- REDES SOCIAIS RÁPIDAS -->
+            <div class="hero-redes d-flex justify-content-center gap-3">
+                <a href="https://github.com/GuilhermeSilva7x" target="_blank" rel="noopener noreferrer" class="social-chip" title="GitHub">
+                    <i class="bi bi-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/guilhermesilva7/" target="_blank" rel="noopener noreferrer" class="social-chip" title="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=guisilvaff4@gmail.com" target="_blank" rel="noopener noreferrer" class="social-chip" title="Gmail">
+                    <i class="bi bi-envelope-at-fill"></i>
+                </a>
+            </div>
+
+        </div>
     </main>
 
-    <!-- SEÇÃO SOBRE MIM -->
-    <section id="sobre" class="sobre container py-4">
-        <h2 class="sobre-titulo text-center mb-3">Sobre mim</h2>
-        <div class="sobre-eu text-center">
-            <p class="sobre-eu-texto col-md-8 mx-auto lead">
-                Olá, me chamo Guilherme, tenho 20 anos e estou me formando em Engenharia de Software.
-                Sempre fui apaixonado por tecnologia e atualmente estou aprendendo a desenvolver.
-                Estou no começo dessa jornada, mas quero aprender cada dia mais para me tornar
-                um excelente profissional na área da tecnologia.
-            </p>
+    <!-- SEÇÃO SOBRE MIM (CARDS 3D MODERNOS) -->
+    <section id="sobre" class="secao-padrao container py-5">
+        <div class="secao-cabecalho text-center mb-5">
+            <span class="subtitulo-badge">Quem eu sou</span>
+            <h2 class="titulo-secao">Sobre Mim</h2>
+            <div class="linha-gradiente-centro"></div>
+        </div>
+
+        <div class="col-lg-10 mx-auto">
+            <div class="card-glass-master p-4 p-md-5 mb-4 tilt-card">
+                <p class="sobre-texto lead text-center mb-0">
+                    Olá! Me chamo <strong>Guilherme</strong>, tenho 20 anos e estou cursando <strong>Engenharia de Software</strong>.
+                    Sempre fui apaixonado por tecnologia e arquitetura de software. Atualmente me dedico a criar experiências web rápidas, responsivas e visualmente marcantes, combinando boas práticas de engenharia com design moderno.
+                </p>
+            </div>
+
+            <!-- Grid de Pilares 3D -->
+            <div class="row g-3 g-md-4">
+                <div class="col-md-4">
+                    <div class="card-pilar-3d tilt-card">
+                        <div class="pilar-icone-box gradiente-azul">
+                            <i class="bi bi-mortarboard-fill"></i>
+                        </div>
+                        <h3 class="h5 fw-bold mb-2">Graduação</h3>
+                        <p class="text-muted-custom small mb-0">Formação sólida em Engenharia de Software, lógica avançada e arquitetura de sistemas.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card-pilar-3d tilt-card">
+                        <div class="pilar-icone-box gradiente-roxo">
+                            <i class="bi bi-laptop-fill"></i>
+                        </div>
+                        <h3 class="h5 fw-bold mb-2">Frontend Moderno</h3>
+                        <p class="text-muted-custom small mb-0">Interfaces adaptadas para celulares e desktops com HTML5, CSS3, JavaScript e Bootstrap.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card-pilar-3d tilt-card">
+                        <div class="pilar-icone-box gradiente-ciano">
+                            <i class="bi bi-infinity"></i>
+                        </div>
+                        <h3 class="h5 fw-bold mb-2">Evolução Contínua</h3>
+                        <p class="text-muted-custom small mb-0">Versionamento com Git/GitHub, gestão ágil com Jira/Kanban e testes constantes.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- SEÇÃO HABILIDADES -->
-    <section id="habilidades" class="habilidades container py-4">
-        <h2 class="text-center mb-4">Habilidades & Conhecimentos</h2>
-        <div class="habilidades-caixa col-md-8 mx-auto">
-            <div class="mb-3">
-                <div class="d-flex justify-content-between mb-1">
-                    <span>HTML5 & CSS3</span>
-                    <span>80%</span>
-                </div>
-                <div class="progress" role="progressbar">
-                    <div class="progress-bar bg-primary" style="width: 80%"></div>
+    <section id="habilidades" class="secao-padrao container py-5">
+        <div class="secao-cabecalho text-center mb-5">
+            <span class="subtitulo-badge">O que eu domino</span>
+            <h2 class="titulo-secao">Habilidades & Conhecimentos</h2>
+            <div class="linha-gradiente-centro"></div>
+        </div>
+
+        <div class="row g-3 g-md-4 col-lg-10 mx-auto">
+            <!-- HTML5 & CSS3 -->
+            <div class="col-md-6">
+                <div class="card-habilidade-pro tilt-card">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icone-tech tech-html">
+                                <i class="bi bi-filetype-html"></i>
+                            </div>
+                            <div>
+                                <h3 class="h6 fw-bold mb-0">HTML5 & CSS3</h3>
+                                <span class="tech-nivel">Estruturação & Estilização 3D</span>
+                            </div>
+                        </div>
+                        <span class="tech-porcentagem">80%</span>
+                    </div>
+                    <div class="barra-progresso-container">
+                        <div class="barra-progresso-fill barra-html" style="width: 80%"></div>
+                    </div>
                 </div>
             </div>
 
-            <div class="mb-3">
-                <div class="d-flex justify-content-between mb-1">
-                    <span>JavaScript</span>
-                    <span>50%</span>
-                </div>
-                <div class="progress" role="progressbar">
-                    <div class="progress-bar bg-info" style="width: 50%"></div>
+            <!-- JavaScript -->
+            <div class="col-md-6">
+                <div class="card-habilidade-pro tilt-card">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icone-tech tech-js">
+                                <i class="bi bi-filetype-js"></i>
+                            </div>
+                            <div>
+                                <h3 class="h6 fw-bold mb-0">JavaScript</h3>
+                                <span class="tech-nivel">Lógica, DOM & Dinamismo</span>
+                            </div>
+                        </div>
+                        <span class="tech-porcentagem">55%</span>
+                    </div>
+                    <div class="barra-progresso-container">
+                        <div class="barra-progresso-fill barra-js" style="width: 55%"></div>
+                    </div>
                 </div>
             </div>
 
-            <div class="mb-3">
-                <div class="d-flex justify-content-between mb-1">
-                    <span>Bootstrap 5</span>
-                    <span>65%</span>
-                </div>
-                <div class="progress" role="progressbar">
-                    <div class="progress-bar bg-warning" style="width: 65%"></div>
+            <!-- Bootstrap 5 -->
+            <div class="col-md-6">
+                <div class="card-habilidade-pro tilt-card">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icone-tech tech-bs">
+                                <i class="bi bi-bootstrap-fill"></i>
+                            </div>
+                            <div>
+                                <h3 class="h6 fw-bold mb-0">Bootstrap 5</h3>
+                                <span class="tech-nivel">Layouts Ágeis & Responsivos</span>
+                            </div>
+                        </div>
+                        <span class="tech-porcentagem">70%</span>
+                    </div>
+                    <div class="barra-progresso-container">
+                        <div class="barra-progresso-fill barra-bs" style="width: 70%"></div>
+                    </div>
                 </div>
             </div>
+
+            <!-- Git & GitHub -->
+            <div class="col-md-6">
+                <div class="card-habilidade-pro tilt-card">
+                    <div class="d-flex align-items-center justify-content-between mb-3">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="icone-tech tech-git">
+                                <i class="bi bi-git"></i>
+                            </div>
+                            <div>
+                                <h3 class="h6 fw-bold mb-0">Git & GitHub</h3>
+                                <span class="tech-nivel">Controle de Versão & Deploy</span>
+                            </div>
+                        </div>
+                        <span class="tech-porcentagem">65%</span>
+                    </div>
+                    <div class="barra-progresso-container">
+                        <div class="barra-progresso-fill barra-git" style="width: 65%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Badges de Competências Extras -->
+        <div class="d-flex justify-content-center flex-wrap gap-2 mt-4 col-lg-8 mx-auto">
+            <span class="badge-competencia"><i class="bi bi-check2-circle me-1 text-primary"></i> UI/UX Moderno</span>
+            <span class="badge-competencia"><i class="bi bi-check2-circle me-1 text-primary"></i> Mobile First (100% Responsivo)</span>
+            <span class="badge-competencia"><i class="bi bi-check2-circle me-1 text-primary"></i> Metodologias Ágeis (Jira)</span>
+            <span class="badge-competencia"><i class="bi bi-check2-circle me-1 text-primary"></i> Clean Code</span>
         </div>
     </section>
 
     <!-- SEÇÃO PROJETOS -->
-    <section id="projetos" class="projetos container py-4">
-        <h2 class="projetos-titulo text-center mb-4">Meus Projetos</h2>
-        <div class="projetos-caixa d-flex justify-content-center gap-4 flex-wrap">
-            <div class="projeto-card card">
-                <img src="img/embreve.png" alt="Projeto 1" class="projeto-imagem card-img-top">
-                <div class="caixa-texto-projetos card-body">
-                    <h3 class="info-projeto card-title">Projeto 1</h3>
-                    <p class="paragrafo-projetos card-text">Projetos em desenvolvimento. Em breve.</p>
+    <section id="projetos" class="secao-padrao container py-5">
+        <div class="secao-cabecalho text-center mb-5">
+            <span class="subtitulo-badge">Portfólio em ação</span>
+            <h2 class="titulo-secao">Meus Projetos</h2>
+            <div class="linha-gradiente-centro"></div>
+        </div>
+
+        <div class="projetos-grid col-lg-10 mx-auto">
+            <!-- Projeto 1: TaskFlow Kanban -->
+            <div class="card-projeto-master tilt-card">
+                <div class="capa-projeto visual-kanban">
+                    <div class="icone-mockup-3d">📋</div>
+                    <div class="tags-flutuantes-capa">
+                        <span class="tag-capa">Kanban</span>
+                        <span class="tag-capa">LocalStorage</span>
+                    </div>
+                    <span class="badge-status-card"><i class="bi bi-star-fill text-warning me-1"></i> Destaque</span>
+                </div>
+
+                <div class="detalhes-projeto p-4">
+                    <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                        <span class="chip-tech">HTML5</span>
+                        <span class="chip-tech">CSS3</span>
+                        <span class="chip-tech">JavaScript</span>
+                        <span class="chip-tech">Kanban</span>
+                    </div>
+                    <h3 class="h5 fw-bold mb-2">TaskFlow - Gestão Ágil & Kanban</h3>
+                    <p class="text-muted-custom small mb-4">
+                        Gerenciador ágil de tarefas inspirado no Jira e Trello com persistência de dados no navegador via LocalStorage e movimentação fluida de cards.
+                    </p>
+                    <a href="https://github.com/GuilhermeSilva7x" target="_blank" rel="noopener noreferrer" class="btn btn-projeto-acao w-100">
+                        <i class="bi bi-github me-2"></i> Ver Repositório no GitHub
+                    </a>
                 </div>
             </div>
-            <div class="projeto-card card">
-                <img src="img/embreve.png" alt="Projeto 2" class="projeto-imagem card-img-top">
-                <div class="caixa-texto-projetos card-body">
-                    <h3 class="info-projeto card-title">Projeto 2</h3>
-                    <p class="paragrafo-projetos card-text">Projetos em desenvolvimento. Em breve.</p>
+
+            <!-- Projeto 2: FinanceControl Dashboard -->
+            <div class="card-projeto-master tilt-card">
+                <div class="capa-projeto visual-finance">
+                    <div class="icone-mockup-3d">📈</div>
+                    <div class="tags-flutuantes-capa">
+                        <span class="tag-capa">Dashboard</span>
+                        <span class="tag-capa">Responsivo</span>
+                    </div>
+                    <span class="badge-status-card"><i class="bi bi-lightning-charge-fill text-info me-1"></i> Interativo</span>
+                </div>
+
+                <div class="detalhes-projeto p-4">
+                    <div class="d-flex align-items-center gap-2 mb-2 flex-wrap">
+                        <span class="chip-tech">Bootstrap 5</span>
+                        <span class="chip-tech">JavaScript</span>
+                        <span class="chip-tech">Chart UI</span>
+                        <span class="chip-tech">Clean Code</span>
+                    </div>
+                    <h3 class="h5 fw-bold mb-2">FinanceControl - Dashboard</h3>
+                    <p class="text-muted-custom small mb-4">
+                        Dashboard financeiro pessoal com métricas em cards modernos, controle de receitas/despesas, cálculo automático e visualização 100% responsiva.
+                    </p>
+                    <a href="https://github.com/GuilhermeSilva7x" target="_blank" rel="noopener noreferrer" class="btn btn-projeto-acao w-100">
+                        <i class="bi bi-github me-2"></i> Ver Repositório no GitHub
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- SEÇÃO CONTATO -->
-    <section id="contato" class="contato container py-4 text-center">
-        <h2 class="contatos-titulo mb-4">Entre em contato</h2>
+    <section id="contato" class="secao-padrao container py-5 text-center">
+        <div class="secao-cabecalho text-center mb-5">
+            <span class="subtitulo-badge">Vamos conversar</span>
+            <h2 class="titulo-secao">Entre em Contato</h2>
+            <div class="linha-gradiente-centro"></div>
+            <p class="text-muted-custom mt-2">Pronto para colaborar em novos desafios e projetos inovadores!</p>
+        </div>
 
-        <!-- Links de redes sociais -->
-        <div class="redes-sociais d-flex justify-content-center gap-3 mb-4">
-            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=guisilvaff4@gmail.com"
-                class="btn btn-outline-primary" target="_blank" rel="noopener noreferrer">
-                <i class="bi bi-envelope-fill"></i> E-mail
+        <!-- Botões de Contato Rápido -->
+        <div class="d-flex justify-content-center gap-2 gap-md-3 mb-5 flex-wrap">
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=guisilvaff4@gmail.com" class="btn-rede-moderno" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-google"></i>
+                <span>Gmail</span>
             </a>
-
-            <a href="https://www.linkedin.com/in/guilhermesilva7/" class="btn btn-outline-primary" target="_blank">
-                <i class="bi bi-linkedin"></i> LinkedIn
+            <a href="https://www.linkedin.com/in/guilhermesilva7/" class="btn-rede-moderno" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-linkedin"></i>
+                <span>LinkedIn</span>
             </a>
-            <a href="https://github.com/GuilhermeSilva7x" class="btn btn-outline-light" target="_blank">
-                <i class="bi bi-github"></i> GitHub
+            <a href="https://github.com/GuilhermeSilva7x" class="btn-rede-moderno" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-github"></i>
+                <span>GitHub</span>
             </a>
         </div>
 
-        <!-- Formulário WhatsApp -->
-        <form class="formulario-contato col-md-6 mx-auto" id="formulario" onsubmit="enviarWhats(event)">
-            <div class="grupo-form mb-3">
-                <input type="text" placeholder="Seu Nome" class="campo-form" id="nome" required>
-            </div>
-            <div class="grupo-form mb-3">
-                <textarea class="campo-form" placeholder="Digite sua mensagem" rows="4" id="mensagem"
-                    required></textarea>
-            </div>
-            <button type="submit" class="botao-form">
-                Enviar WhatsApp
-            </button>
-        </form>
+        <!-- Formulário WhatsApp Ultra Moderno -->
+        <div class="col-lg-6 col-md-8 mx-auto">
+            <form class="card-glass-master p-4 p-md-5 tilt-card" id="formulario" onsubmit="enviarWhats(event)">
+                <div class="whats-badge-icone mb-3">
+                    <i class="bi bi-whatsapp"></i>
+                </div>
+                <h3 class="h5 fw-bold mb-1">Mensagem Direta no WhatsApp</h3>
+                <p class="text-muted-custom small mb-4">Preencha os campos para iniciar a conversa diretamente no meu WhatsApp</p>
+
+                <div class="form-campo-grupo mb-3 text-start">
+                    <label for="nome" class="form-label-tech">Seu Nome</label>
+                    <div class="input-wrapper-tech">
+                        <i class="bi bi-person input-icone-tech"></i>
+                        <input type="text" placeholder="Como você se chama?" class="input-tech" id="nome" required autocomplete="name">
+                    </div>
+                </div>
+
+                <div class="form-campo-grupo mb-4 text-start">
+                    <label for="mensagem" class="form-label-tech">Sua Mensagem</label>
+                    <div class="input-wrapper-tech">
+                        <i class="bi bi-chat-left-text input-icone-tech textarea-icone-tech"></i>
+                        <textarea class="input-tech" placeholder="Escreva sua mensagem ou oportunidade..." rows="4" id="mensagem" required></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-enviar-whats w-100">
+                    <span>Enviar no WhatsApp</span>
+                    <i class="bi bi-send-fill ms-2"></i>
+                </button>
+            </form>
+        </div>
     </section>
 
-    <!-- Scripts -->
+    <!-- RODAPÉ MODERNO -->
+    <footer class="rodape-master py-4 text-center">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+            <p class="mb-0 text-muted-custom small">
+                © <span id="ano-atual">2026</span> <strong>Guilherme Silva</strong>. Engenharia de Software.
+            </p>
+            <div class="d-flex align-items-center gap-3">
+                <span class="badge-status-footer small">
+                    <i class="bi bi-circle-fill text-success me-1" style="font-size: 8px;"></i> Aberto a Oportunidades
+                </span>
+                <a href="#inicio" class="btn-topo-master" title="Voltar ao topo" aria-label="Voltar ao topo">
+                    <i class="bi bi-arrow-up-short fs-4"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- DOCK BAR INFERIOR MOBILE (IGUAL A UM APP MODERNO DE CELULAR) -->
+    <div class="dock-mobile-inferior d-flex d-md-none justify-content-around align-items-center">
+        <a href="#inicio" class="dock-item active">
+            <i class="bi bi-house-door"></i>
+            <span>Início</span>
+        </a>
+        <a href="#sobre" class="dock-item">
+            <i class="bi bi-person"></i>
+            <span>Sobre</span>
+        </a>
+        <a href="#habilidades" class="dock-item">
+            <i class="bi bi-cpu"></i>
+            <span>Skills</span>
+        </a>
+        <a href="#projetos" class="dock-item">
+            <i class="bi bi-code-slash"></i>
+            <span>Projetos</span>
+        </a>
+        <a href="#contato" class="dock-item">
+            <i class="bi bi-chat-dots"></i>
+            <span>Contato</span>
+        </a>
+    </div>
+
+    <!-- SCRIPTS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="java.js"></script>
